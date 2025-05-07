@@ -47,12 +47,12 @@ This code has been tested on Ubuntu 20.04 with ROS Noetic.
     
     - Change python path at -DPYTHON_EXEC in the shell file if needed.  
     - Ompl-1.6.0 requires zipp==1.15.0 and pygccxml==2.2.1, otherwise it will fail to generate bindings!  
-    - If still raises errors while making update_bindings: 'FileNotFoundError: [Errno 2] No such file or directory: 'bindings/base':
+    - If it still raises errors while making update_bindings: 'FileNotFoundError: [Errno 2] No such file or directory: 'bindings/base':
     See https://github.com/ompl/ompl/issues/1036, git clone the latest ompl github and compile it manually following commands from line 86 to 101 in the install-ompl-ubuntu.sh.
 
 4. Customization
     - Modify necessary params in the [config files](config/scene1.yaml) (e.g., camera intrinsics).
-    - For rrr_exploration, define the sampling boundary in [global_rrt_detector.cpp](venue_map_planner/rrt_exploration/src/global_rrt_detector.cpp) and [local_rrt_detector.cpp](venue_map_planner/rrt_exploration/src/local_rrt_detector.cpp). 
+    - For rrt_exploration, define the sampling boundary in [global_rrt_detector.cpp](venue_map_planner/rrt_exploration/src/global_rrt_detector.cpp) and [local_rrt_detector.cpp](venue_map_planner/rrt_exploration/src/local_rrt_detector.cpp). 
     - Then put [venue_map_planner](venue_map_planner) in an individual catkin workspace for compiling and launching it.
     
 
@@ -85,7 +85,7 @@ roslaunch venue_map_planner my_explore.launch
 - **ESTextSpotter**: 
   - scene_understand/ESTextSpotter/models/ests/ests.py
   - scene_understand/ESTextSpotter/models/ests/deformable_transformer.py
-- **rrt_exploration**: 
+- **venue_map_planner**: 
   - venue_map_planner/rrt_exploration/scripts/nbvp.py
   - venue_map_planner/rrt_exploration/src/local_rrt_detector.cpp
   - venue_map_planner/rrt_exploration/src/global_rrt_detector.cpp
