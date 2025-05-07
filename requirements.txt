@@ -1,0 +1,37 @@
+networkx
+numpy
+matplotlib
+scikit-learn
+scikit-image
+opencv-python
+pyyaml
+easydict
+pycocotools
+scipy
+cython
+ultralytics
+datasets
+Levenshtein
+pillow==9.1.0
+ostools
+cnocr[ort-cpu]
+pyrealsense2
+
+--extra-index-url http://rospypi.github.io/simple/ 
+--trusted-host rospypi.github.io
+rospkg
+rospy
+sensor_msgs
+tf
+geometry_msgs
+cv_bridge
+dynamic_reconfigure
+actionlib
+actionlib_msgs
+tf2_ros
+nav_msgs
+std_msgs
+move_base_msgs
+std_srvs
+
+

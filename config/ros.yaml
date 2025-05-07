@@ -1,0 +1,68 @@
+topics:
+  odom: /odom
+  map: /projected_map_erode
+  leg_odom: /leg_odom
+  vel: /cmd_vel
+  lidar: /os_cloud_node/points
+  imu: /os_cloud_node/imu
+  local_planner: /way_point
+  
+  scan: /scan
+  initialpose: /initialpose
+  move_base:
+    goal: /move_base_simple/goal
+    global_plan: /move_base/LocalPlanner/global_plan
+    local_plan: /move_base/LocalPlanner/local_plan
+    result: /move_base/result
+
+frames:
+  odom: /odom
+  map: /odom
+  base: /base_link
+  goal: /map
+OGmap_path: ./utils/jueying
+node_name: semantic_nav
+sleep_time: 2.0
+duration: 5.0
+
+## map
+update_movement: 5.0  # map update whenever moving 5 meters
+reset_srv: /octomap_server/reset
+
+## camera
+camera_id: D455
+camera_fps: 15  # 15 for usb2.0, 30 for ubs3.0 
+max_depth: 2
+camerae_intrinstics:
+  width: 640
+  height: 480
+  ppx: 334.5693359375
+  ppy: 242.9739227294922
+  fx: 386.22198486328125
+  fy: 385.70904541015625
+  model: rs.pyrealsense2.distortion.inverse_brown_conrady
+  coeffs: 
+    - -0.054668378084897995
+    - 0.06383420526981354
+    - -0.00018406909657642245
+    - 0.000547879608348012
+    - -0.020357295870780945
+
+
+## viewpoint
+min_move: 3
+min_yaw_change: pi / 6
+decimal: 2
+afford_ratio: 1.5
+frame_rate: 5
+rateHz: 1
+map_erode_topic: /projected_map_erode
+viewpoint_topic: /viewpoints
+viewpoint_score_topic: /viewpoints_score
+finished_viewpoint_topic: /finished_viewpoint
+shopfront_topic: 
+finished_shopfront_topic: 
+subgoal_topic: /next_subgoal
+viewpoint_range: 15 
+viewpoint_score_thred: 0.15
+

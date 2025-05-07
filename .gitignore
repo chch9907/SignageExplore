@@ -1,0 +1,16 @@
+*__pycache__*
+*.pt
+*.weight
+*.jpg
+*.jpeg
+*.png
+*.zip
+*.pkl
+*.ipynb_checkpoints
+paper_figs/*
+
+!materials/guide_maps/*
+!materials/text_imgs/scene1/*
+!materials/text_imgs/scene2/*
+!framework/*
+

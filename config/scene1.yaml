@@ -1,0 +1,69 @@
+## OCR detection
+iou_thred: 0.01
+prob_thred: 0.3 
+area_2d_bound: 200  
+area_3d_bound: 150  
+min_height: 1.2
+max_height: 4.0 
+merge_thred: 150
+img_shape: 640
+detect_save_path: scene_understand/detect_results/
+ocr_type: ESTS # cnocr
+cnocr_use_config: False
+use_gpu: True
+cnocr_config: 
+    rec_model_name: scene-densenet_lite_136-gru 
+    det_model_name: db_shufflenet_v2
+    det_more_configs: {'rotated_bbox': False}
+viewpoint_dist: 2.0
+ESTS_model_path: scene_understand/ESTextSpotter/rects_checkpoint.pth
+ESTS_config_path: scene_understand/ESTextSpotter/config/ESTS/ESTS_4scale_chn_finetune.py
+text_nms: 0.2
+detect_interval: 4
+
+## topograph building 
+map_path: materials/guide_maps/scene1.png 
+text_img_path: materials/text_imgs/scene1 
+edge_thred: 30 
+neighbor_thred: 150
+score_thred: 0.6
+walk_num: 10
+walk_length: 4
+loc_thred: 0.3 
+search_type: astar  # djikstra
+prune: True
+loc_type: visual-text-matching
+topk_matching: 2
+min_ransac_num: 2
+ransacReprojThred: 500
+
+
+## semantic mapping
+render_freq: 8  # freq for rendering semantic map
+render_size: 1
+filter_contours: True  
+near_dist: 40
+
+
+## planning
+max_range: 15
+mode: utility  # random, infor_gain
+
+## frontiers
+search_radius: 10
+merge_thred: 5
+contour_cluster_dist: 5  #! 3 for indoor, 5 for scene1 and scene2
+crop_dist: 10
+near_dist: 2
+
+## 3D scene text fusion
+merge_dist_thred: 4
+merge_height_thred: 0.5
+sim_thred: 0.4
+merge_freq: 8
+min_filter_count: 1 
+min_instance_count: 2
+loc_score_thred: 0.3
+final_goal: ''
+
+output_dir: './outputs'

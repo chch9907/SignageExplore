@@ -1,0 +1,6 @@
+[submodule "scene_understand/ESTextSpotter"]
+	path = scene_understand/ESTextSpotter
+	url = https://github.com/chch9907/ESTextSpotter
+[submodule "venue_map_planner"]
+	path = venue_map_planner
+	url = https://github.com/chch9907/venue_map_planner.git
