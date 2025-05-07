@@ -8,7 +8,7 @@
 ![framework](framework/framework.png)
 
 ## Preparation
-This code has bene tested on ubuntu 20.04 with ROS noetic.
+This code has been tested on Ubuntu 20.04 with ROS Noetic.
 
 
 1. Prepare packages
@@ -40,20 +40,20 @@ This code has bene tested on ubuntu 20.04 with ROS noetic.
 
 3. Prepare omcl with python-bindings for global path planner:  
 
-    Installation script for ompl with py-bindings has been downloaded. Install omple by executing the shell file:
+    The installation script for OMPL with py-bindings has been downloaded. Install omple by executing the shell file:
     ``` bash
     ./install-ompl-ubuntu.sh --python 
     ```
     
     - Change python path at -DPYTHON_EXEC in the shell file if needed.  
-    - Ompl-1.6.0 requires zipp==1.15.0 and pygccxml==2.2.1, otherwise will fail to generate bindings!  
-    - If still raise errors while make update_bindings: 'FileNotFoundError: [Errno 2] No such file or directory: 'bindings/base':
-    see https://github.com/ompl/ompl/issues/1036, git clone the latest omcl github and compile it manually following commands from line 86 to 101 in the install-ompl-ubuntu.sh.
+    - Ompl-1.6.0 requires zipp==1.15.0 and pygccxml==2.2.1, otherwise it will fail to generate bindings!  
+    - If still raises errors while making update_bindings: 'FileNotFoundError: [Errno 2] No such file or directory: 'bindings/base':
+    See https://github.com/ompl/ompl/issues/1036, git clone the latest ompl github and compile it manually following commands from line 86 to 101 in the install-ompl-ubuntu.sh.
 
 4. Customization
     - Modify necessary params in the [config files](config/scene1.yaml) (e.g., camera intrinsics).
     - For rrr_exploration, define the sampling boundary in [global_rrt_detector.cpp](venue_map_planner/rrt_exploration/src/global_rrt_detector.cpp) and [local_rrt_detector.cpp](venue_map_planner/rrt_exploration/src/local_rrt_detector.cpp). 
-    - Then put the [venue_map_planner](venue_map_planner) to a individual workspace for compiling and launching it.
+    - Then put [venue_map_planner](venue_map_planner) in an individual catkin workspace for compiling and launching it.
     
 
 
@@ -74,7 +74,7 @@ python3 offline_process_venue_maps.py --scene 1 --ocr_type cnocr
 ```bash
 # run Fast-Lio, Octomap Mapping, Dynamic Pointcloud Filtering, Robot Control, local policy
 
-# run agent.py for signage understanding, semantic mapping, and topological localization and planning
+# run agent.py for signage understanding, semantic mapping, topological localization and planning
 conda activate signexp
 python3 agent.py --scene 1 --use_camera_topic --plot # --show
 
