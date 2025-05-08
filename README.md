@@ -1,4 +1,4 @@
-# SignageExplore
+# Signage Navigation
 (RA-L 2025) [**Signage-Aware Exploration in Open World Using Venue Maps**](https://arxiv.org/pdf/2410.10143)
 
 *Chang Chen, Liang Lu, Lei Yang, Yinqiang Zhang, Yizhou Chen, Ruixing Jia, Jia Pan*
