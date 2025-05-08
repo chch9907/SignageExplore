@@ -22,7 +22,7 @@ This code has been tested on Ubuntu 20.04 with ROS Noetic.
     # three modified submodules: ESTextSpotter, rrt_exploration, distance_map
     git clone https://github.com/chch9907/SignageExplore --recurse-submodules
     
-    conda create -n signexp python=3.8
+    conda create -n signnav python=3.8
     pip install -r requirements.txt
     ```
 
@@ -75,7 +75,7 @@ python3 offline_process_venue_maps.py --scene 1 --ocr_type cnocr
 # run Fast-Lio, Octomap Mapping, Dynamic Pointcloud Filtering, Robot Control, local policy
 
 # run agent.py for signage understanding, semantic mapping, topological localization and planning
-conda activate signexp
+conda activate signnav
 python3 agent.py --scene 1 --use_camera_topic --plot # --show
 
 # run venue_map_planner for frontier detection, global and local path planning
